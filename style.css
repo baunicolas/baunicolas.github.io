@@ -7,8 +7,8 @@
 
 :root {
     --primary: #1a1a2e;
-    --accent: #6b4c9a;
-    --accent-light: #8b6fbf;
+    --accent: #c4401a;
+    --accent-light: #d4572f;
     --text: #2d2d2d;
     --text-light: #555;
     --bg: #fafafa;
@@ -250,7 +250,7 @@ a:hover {
     font-weight: 600;
     padding: 0.15rem 0.6rem;
     border-radius: 3px;
-    background: #f0edf5;
+    background: #fdf0ec;
     color: var(--accent);
     margin-bottom: 0.5rem;
 }
@@ -308,7 +308,7 @@ details.paper-abstract summary:hover {
 details.paper-abstract .abstract-content {
     margin-top: 0.75rem;
     padding: 1rem;
-    background: #f8f7fb;
+    background: #fdf5f2;
     border-left: 3px solid var(--accent);
     border-radius: 0 var(--radius) var(--radius) 0;
     font-size: 0.93rem;
