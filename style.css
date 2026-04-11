@@ -6,9 +6,9 @@
 }
 
 :root {
-    --primary: #2d2d2d;
-    --accent: #1a7a6d;
-    --accent-light: #23997a;
+    --primary: #3b1a0a;
+    --accent: #c4401a;
+    --accent-light: #d4572f;
     --text: #2d2d2d;
     --text-light: #555;
     --bg: #fafafa;
@@ -251,7 +251,7 @@ a:hover {
     font-weight: 600;
     padding: 0.15rem 0.6rem;
     border-radius: 3px;
-    background: #e8f5f2;
+    background: #fdf0ec;
     color: var(--accent);
     margin-bottom: 0.5rem;
 }
@@ -309,7 +309,7 @@ details.paper-abstract summary:hover {
 details.paper-abstract .abstract-content {
     margin-top: 0.75rem;
     padding: 1rem;
-    background: #f0f9f7;
+    background: #fdf5f2;
     border-left: 3px solid var(--accent);
     border-radius: 0 var(--radius) var(--radius) 0;
     font-size: 0.93rem;
@@ -411,8 +411,8 @@ footer a {
 /* ── Dark Mode ───────────────────────────────────── */
 [data-theme="dark"] {
     --primary: #e0e0e0;
-    --accent: #2ec4b6;
-    --accent-light: #45d9cc;
+    --accent: #e8784a;
+    --accent-light: #f09070;
     --text: #e0e0e0;
     --text-light: #aaa;
     --bg: #1a1a1a;
@@ -435,11 +435,11 @@ footer a {
 }
 
 [data-theme="dark"] .paper-status {
-    background: #1a3530;
+    background: #3a2015;
 }
 
 [data-theme="dark"] details.paper-abstract .abstract-content {
-    background: #1a2b28;
+    background: #2e1a10;
 }
 
 [data-theme="dark"] .contact-links a {
