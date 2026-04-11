@@ -160,6 +160,15 @@ a:hover {
     color: var(--text);
 }
 
+.bio-link {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+.bio-link:hover {
+    color: var(--accent);
+}
+
 .contact-links {
     display: flex;
     gap: 1rem;
