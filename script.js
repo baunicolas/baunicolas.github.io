@@ -15,4 +15,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Dark/Light theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon(next);
+        });
+    }
+
+    function updateIcon(theme) {
+        if (!icon) return;
+        if (theme === 'dark') {
+            icon.className = 'fas fa-sun';
+        } else {
+            icon.className = 'fas fa-moon';
+        }
+    }
 });
