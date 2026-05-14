@@ -265,40 +265,51 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
-.paper-links {
+.paper-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 0.4rem;
+    align-items: center;
+    margin-top: 0.4rem;
 }
 
-.paper-links a {
+.paper-links {
+    display: contents;
+}
+
+.paper-links a,
+.paper-actions > a {
     display: inline-block;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    padding: 0.25rem 0.75rem;
+    padding: 0.15rem 0.55rem;
     border: 1.5px solid var(--accent);
     border-radius: var(--radius);
     color: var(--accent);
     transition: all 0.2s;
 }
 
-.paper-links a:hover {
+.paper-links a:hover,
+.paper-actions > a:hover {
     background: var(--accent);
     color: #fff;
 }
 
 /* Abstract toggle */
 details.paper-abstract {
-    margin-top: 0.5rem;
+    margin-top: 0;
+}
+
+details.paper-abstract[open] {
+    flex-basis: 100%;
 }
 
 details.paper-abstract summary {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--accent);
     cursor: pointer;
-    padding: 0.25rem 0.75rem;
+    padding: 0.15rem 0.55rem;
     border: 1.5px solid var(--accent);
     border-radius: var(--radius);
     display: inline-block;
