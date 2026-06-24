@@ -312,7 +312,9 @@ a {
 
 /* Abstract toggle */
 details.paper-abstract {
+    display: block;
     margin-top: 0.35rem;
+    margin-bottom: 0.1rem;
 }
 
 details.paper-abstract summary {
