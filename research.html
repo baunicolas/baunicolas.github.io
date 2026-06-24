@@ -1,510 +1,76 @@
-/* ── Reset & Base ───────────────────────────────── */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --text:       #1a1a1a;
-    --text-light: #666;
-    --bg:         #fff;
-    --bg-card:    #fff;
-    --border:     #e0e0e0;
-    --radius:     4px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text);
-    background: var(--bg);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.25s, color 0.25s;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.15s;
-}
-
-/* ── Container ─────────────────────────────────── */
-.container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* ── Navigation ────────────────────────────────── */
-.navbar {
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background 0.25s, border-color 0.25s;
-}
-
-.nav-container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    height: 56px;
-    gap: 1rem;
-}
-
-.nav-name {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--text);
-    flex-shrink: 0;
-}
-
-.nav-name:hover { color: var(--text-light); }
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 0.25rem;
-    margin-left: auto;
-}
-
-.nav-links a {
-    color: var(--text-light);
-    padding: 0.35rem 0.75rem;
-    border-radius: var(--radius);
-    font-size: 0.92rem;
-    transition: color 0.15s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--text);
-}
-
-/* Mobile nav toggle */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-left: auto;
-}
-
-.nav-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--text);
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-/* Theme toggle */
-.theme-toggle {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    color: var(--text-light);
-    transition: all 0.2s;
-    flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-    color: var(--text);
-    border-color: var(--text-light);
-}
-
-/* ── About Section ─────────────────────────────── */
-.about-section {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-    padding: 3rem 0 2rem;
-}
-
-.about-photo { flex-shrink: 0; }
-
-.about-photo img {
-    width: 190px;
-    height: 230px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    display: block;
-}
-
-.about-text h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.15rem;
-}
-
-.subtitle {
-    color: var(--text-light);
-    font-size: 1rem;
-    margin-bottom: 1.1rem;
-}
-
-.bio {
-    font-size: 0.97rem;
-    color: var(--text);
-    margin-bottom: 0.9rem;
-    line-height: 1.7;
-}
-
-.bio-link {
-    color: var(--text-light);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-.bio-link:hover { color: var(--text); }
-
-.contact-links {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-}
-
-.contact-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    color: var(--text-light);
-    font-size: 1rem;
-    transition: color 0.15s, border-color 0.15s;
-}
-
-.contact-links a:hover {
-    color: var(--text);
-    border-color: var(--text-light);
-}
-
-/* ── Page Header ───────────────────────────────── */
-.page-header {
-    padding: 2.8rem 0 0;
-    margin-bottom: 2.2rem;
-}
-
-.page-header h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text);
-}
-
-/* ── Research Sections ─────────────────────────── */
-.research-category {
-    margin-bottom: 2rem;
-}
-
-.research-category h2 {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.paper {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.paper:last-child { border-bottom: none; }
-
-.paper-num {
-    color: var(--text-light);
-    font-size: 0.88rem;
-    margin-right: 0.1rem;
-}
-
-.paper-title {
-    font-size: 0.97rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-    line-height: 1.5;
-}
-
-.paper-title a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.paper-title a:hover { text-decoration: underline; text-underline-offset: 2px; }
-
-.paper-authors {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 0.15rem;
-}
-
-.paper-venue {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 0.35rem;
-}
-
-.paper-status {
-    display: block;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--text-light);
-    margin-bottom: 0.3rem;
-}
-
-.paper-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    align-items: flex-start;
-    margin-top: 0.4rem;
-}
-
-.paper-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.35rem;
-}
-
-.paper-links a,
-.paper-actions > a {
-    display: inline-block;
-    font-size: 0.82rem;
-    padding: 1px 9px;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    color: var(--text-light);
-    transition: color 0.15s, border-color 0.15s;
-}
-
-.paper-links a:hover,
-.paper-actions > a:hover {
-    color: var(--text);
-    border-color: var(--text-light);
-}
-
-/* Abstract toggle */
-details.paper-abstract {
-    display: block;
-    margin-top: 0.35rem;
-    margin-bottom: 0.1rem;
-}
-
-details.paper-abstract summary {
-    font-size: 0.84rem;
-    color: var(--text-light);
-    cursor: pointer;
-    padding: 0;
-    border: none;
-    background: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    list-style: none;
-    user-select: none;
-    transition: color 0.15s;
-}
-
-details.paper-abstract summary::-webkit-details-marker { display: none; }
-
-details.paper-abstract summary::before {
-    content: "▸";
-    font-size: 0.65rem;
-    display: inline-block;
-    transition: transform 0.15s;
-}
-
-details.paper-abstract[open] summary::before {
-    transform: rotate(90deg);
-}
-
-details.paper-abstract summary:hover { color: var(--text); }
-
-details.paper-abstract .abstract-content {
-    margin-top: 0.5rem;
-    padding-left: 0.85rem;
-    border-left: 2px solid var(--border);
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: var(--text-light);
-}
-
-/* ── Works in Progress ─────────────────────────── */
-.wip-list {
-    list-style: none;
-    padding: 0;
-}
-
-.wip-list li {
-    font-size: 0.95rem;
-    color: var(--text);
-    padding: 0.45rem 0;
-    padding-left: 1.1rem;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-}
-
-.wip-list li:last-child { border-bottom: none; }
-
-.wip-list li::before {
-    content: "–";
-    position: absolute;
-    left: 0;
-    color: var(--text-light);
-}
-
-.wip-coauthors {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* ── Teaching ──────────────────────────────────── */
-.course {
-    margin-bottom: 1.6rem;
-    padding-bottom: 1.6rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.course:last-child { border-bottom: none; }
-
-.course h3 {
-    font-size: 0.97rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.15rem;
-}
-
-.course-meta {
-    font-size: 0.88rem;
-    color: var(--text-light);
-    margin-bottom: 0.6rem;
-}
-
-.course p {
-    font-size: 0.92rem;
-    color: var(--text-light);
-    line-height: 1.65;
-}
-
-/* ── CV Page ───────────────────────────────────── */
-.cv-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.55rem 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    color: var(--text-light);
-    font-size: 0.92rem;
-    font-weight: 500;
-    transition: color 0.15s, border-color 0.15s;
-}
-
-.cv-download:hover {
-    color: var(--text);
-    border-color: var(--text-light);
-}
-
-.cv-embed {
-    margin-top: 1.5rem;
-    width: 100%;
-    height: 800px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-}
-
-/* ── Footer ────────────────────────────────────── */
-footer {
-    margin-top: auto;
-    padding: 1.5rem 0;
-    text-align: center;
-    font-size: 0.82rem;
-    color: var(--text-light);
-    border-top: 1px solid var(--border);
-}
-
-footer a {
-    color: var(--text-light);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-/* ── Dark Mode ─────────────────────────────────── */
-[data-theme="dark"] {
-    --text:       #e0e0e0;
-    --text-light: #999;
-    --bg:         #1a1a1a;
-    --bg-card:    #242424;
-    --border:     #333;
-}
-
-/* ── Responsive ────────────────────────────────── */
-@media (max-width: 680px) {
-    .about-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1.5rem;
-        padding: 2rem 0;
-    }
-
-    .about-photo img { width: 150px; height: 185px; }
-
-    .contact-links { justify-content: center; }
-
-    .nav-toggle { display: flex; flex-direction: column; }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        padding: 0.75rem 2rem;
-        gap: 0;
-    }
-
-    .nav-links.open { display: flex; }
-
-    .nav-links a {
-        display: block;
-        padding: 0.6rem 0;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-links a:last-child { border-bottom: none; }
-
-    /* hide theme toggle next to hamburger on mobile, keep it in nav */
-    .nav-toggle { order: 2; margin-left: auto; }
-    .theme-toggle { order: 3; }
-}
+@@ -42,7 +42,7 @@
+            <div class="paper">
+                <div class="paper-title">The Institutional Politics of Development Finance: ODA's Role in Shaping Subnational DFI Investments</div>
+                <div class="paper-authors">with Simone Dietrich, Jing Qian, and Duy Trinh</div>
+                <span class="paper-venue"><em>Review of International Organizations</em>, Conditionally accepted</span>
+                <span class="paper-venue"><em>Review of International Organizations</em>, Conditional acceptance</span>
+                <div class="paper-actions">
+                    <details class="paper-abstract">
+                        <summary>Abstract</summary>
+@@ -124,65 +124,65 @@
+            </div>
+
+            <div class="paper">
+                <div class="paper-title">Financing the Global Gateway: How a Reconfigured EU Development Architecture Elevated National Development Finance Institutions</div>
+                <div class="paper-title">Guaranteeing the Global Gateway: National Development Finance Institutions and the Transformation of EU Development Finance</div>
+                <div class="paper-authors">with Simone Dietrich</div>
+                <span class="paper-status">Revise and resubmit at the <em>Journal of European Integration</em></span>
+                <div class="paper-actions">
+                    <details class="paper-abstract">
+                        <summary>Abstract</summary>
+                        <div class="abstract-content">
+                            The recent European Global Gateway Initiative pledged more than 300 billion euros in public and private investment in infrastructure to satisfy international demand while maximizing the economic interests of member countries. However, European development cooperation policy is traditionally far removed from the hard sectors, with an emphasis on promoting democracy and social well-being. How has the European development cooperation architecture evolved to support infrastructure investment in the Global South? We trace the way in which the European Commission has reformed the European development architecture to place national Development Finance Institutions (DFIs) center stage in the financing of the Global Gateway Initiative (GGI). The Commission opened up European guarantees to competition, to enable DFIs to benefit more from them relative to the European Investment Bank (EIB). Using an original database, we show that DFIs are at the core of the GGI initiative and that the projects funded support European economic interests.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works in Progress -->
+        <section class="research-category">
+            <h2>Works in Progress</h2>
+            <ul class="wip-list">
+                <li>Small Donors and the World Bank's IFC: Explaining Co-Financing in Development <span class="wip-coauthors">(with Tetsekela Anyiam-Osigwe)</span></li>
+                <li>Lobbying for Development: How Firms Shape Investment Decisions in U.S. Development Finance <span class="wip-coauthors">(with Jihye Park and Simone Dietrich)</span></li>
+                <li>Compete or Coordinate? The Political Economy of Investment Pooling in International Development Finance</li>
+                <li>The Marketization of Foreign Aid</li>
+                <li>Sustainability Risk Mitigation in International Development Finance</li>
+            </ul>
+        </section>
+
+        <!-- Policy Writings -->
+        <section class="research-category">
+            <h2>Policy Writings</h2>
+
+            <div class="paper">
+                <div class="paper-title">Assessing the Additionality of Development Finance Institutions</div>
+                <div class="paper-authors">with Fatoumata Ngom and Valérie Gaveau</div>
+                <div class="paper-venue">OECD-DAC Working Party on Development Finance Statistics, 2025</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title">Report on the ODA-Eligibility of Private Sector Instruments Extended in Developing Countries</div>
+                <div class="paper-authors">with Tomáš Hos and Valérie Gaveau</div>
+                <div class="paper-venue">OECD Development Assistance Committee, 2024</div>
+                <div class="paper-links">
+                    <a href="https://one.oecd.org/document/DCD/DAC(2024)46/FINAL/en/pdf" target="_blank">Access</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title">Stocktake and Revised Methodology on the Peer Reviews on Development Finance Statistics</div>
+                <div class="paper-authors">with Guillaume Delalande, Valérie Gaveau, and Yasmin Ahmad</div>
+                <div class="paper-venue">OECD-DAC Working Party on Development Finance Statistics, 2024</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nicolas Bau. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
